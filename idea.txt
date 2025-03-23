@@ -1,0 +1,97 @@
+## **Project: Blockchain from Scratch in Golang**
+
+### **1. Core Components of the Blockchain**
+A blockchain consists of a series of blocks, each containing transactions. Every block is linked to the previous one using cryptographic hashes.
+
+- **Block Structure**  
+  Each block will contain:
+  - **Index** (Position of the block in the chain)
+  - **Timestamp** (When the block was created)
+  - **Transactions** (List of transactions in the block)
+  - **Previous Hash** (Hash of the previous block)
+  - **Merkle Root** (Hash of all transactions)
+  - **Nonce** (Random number used for PoW)
+  - **Hash** (SHA-256 hash of the block)
+
+---
+
+### **2. Proof of Work (PoW) vs Proof of Stake (PoS)**
+You'll need to implement a consensus algorithm:
+
+#### **(A) Proof of Work (PoW)**
+- Miners solve a cryptographic puzzle by finding a hash with a specific number of leading zeros.
+- Uses computational power to validate transactions and add blocks.
+
+#### **(B) Proof of Stake (PoS)**
+- Validators are chosen based on the amount of cryptocurrency they hold.
+- Less energy-consuming but requires staking logic.
+
+For simplicity, you can start with **PoW** and later implement **PoS**.
+
+---
+
+### **3. Transactions & Wallet System**
+Your blockchain will support transactions between users.
+
+#### **Transactions**
+- Structure:
+  ```go
+  type Transaction struct {
+      Sender    string
+      Receiver  string
+      Amount    float64
+      Signature string
+  }
+  ```
+- Transactions are signed using **ECDSA (Elliptic Curve Digital Signature Algorithm)**.
+- Use **Merkle Trees** to efficiently validate transactions in blocks.
+
+#### **Wallet System**
+- Each user will have a wallet with:
+  - **Public Key** (Wallet Address)
+  - **Private Key** (For signing transactions)
+- **Digital Signatures** ensure that only the owner of the wallet can send funds.
+
+---
+
+### **4. Block Validation & Chain Synchronization**
+- Each block must be validated before being added to the chain.
+- Nodes in the network should sync their copies of the blockchain.
+
+---
+
+### **5. P2P Network for Decentralization**
+- Use **Go net package** and **gRPC** for peer-to-peer (P2P) communication.
+- Nodes can:
+  - Discover and connect to peers.
+  - Share new transactions and blocks.
+  - Achieve consensus on the longest valid chain.
+
+---
+
+### **6. REST API for Interaction**
+- Provide endpoints using **Go’s HTTP package** to:
+  - View the blockchain.
+  - Create transactions.
+  - Mine new blocks.
+  - Check wallet balances.
+
+---
+
+## **Tech Stack**
+- **Golang’s `crypto` package** → Hashing, digital signatures
+- **SHA-256** → Block hashing
+- **Merkle Trees** → Efficient transaction validation
+- **gRPC / WebSockets** → P2P communication
+- **Go net package** → Network implementation
+
+---
+
+## **How to Start?**
+1. **Implement the Block & Blockchain Structure** ✅
+2. **Add Proof of Work (Mining Mechanism)** ✅
+3. **Create Wallets & Transactions with Digital Signatures** ✅
+4. **Integrate P2P Network for Decentralization** ✅
+5. **Build a REST API for Interaction** ✅
+6. **(Optional) Implement PoS instead of PoW** ✅
+
