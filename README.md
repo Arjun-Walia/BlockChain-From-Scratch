@@ -34,7 +34,7 @@ This project is a simple implementation of a blockchain in Golang. It includes c
 
 ## Project Structure
 ```
-blockchain-from-scratch/
+project/
 ├── go.mod
 ├── go.sum
 ├── main.go
