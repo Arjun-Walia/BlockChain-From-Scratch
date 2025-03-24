@@ -12,7 +12,6 @@ This project is a simple implementation of a blockchain in Golang. It includes c
 5. [API Endpoints](#api-endpoints)
 6. [Consensus Mechanisms](#consensus-mechanisms)
 7. [Contributing](#contributing)
-8. [License](#license)
 
 ---
 
